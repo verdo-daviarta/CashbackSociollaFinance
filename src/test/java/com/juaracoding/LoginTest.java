@@ -52,7 +52,7 @@ public class LoginTest {
         extentTest.log(LogStatus.PASS,"User berhasil login dan diarahkan ke halaman utama");
     }
 
-//--------------------NEGATIF 1--------------------
+//--------------------negatif-username--------------------
 
     @When("User memasukan username yang invalid")
     public void User_memasukan_username_yang_invalid() {
@@ -66,8 +66,8 @@ public class LoginTest {
         extentTest.log(LogStatus.PASS,"User tidak berhasil login dan diarahkan ke halaman login");
     }
 
-//--------------------NEGATIF 2--------------------
-    @When("User memasukan password yang invalid")
+//--------------------negatif-password--------------------
+    @And("User memasukan password yang invalid")
     public void User_memasukan_password_yang_invalid(){
         loginPage.inputPassword("aa");
         extentTest.log(LogStatus.PASS,"User memasukan password yang valid");
