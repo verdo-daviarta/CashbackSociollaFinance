@@ -32,11 +32,21 @@ public class FinancePage {
     @FindBy(xpath = "//*[@id='form_distribution']/button[1]")
     private WebElement btnUpdate;
 
+    @FindBy(xpath = "//button[normalize-space()='Kembalikan ke VERIFIKATOR']")
+    private WebElement btnKembalikan;
+
+    @FindBy(xpath = "//*[@id='btnSave']")
+    private WebElement btnSave;
+
+    @FindBy(xpath = "//strong[normalize-space()='Sukses! Berhasil diupdate!']")
+    private WebElement txtValid;
+
+
 //------------------------------------
     public void clickFinanceMenu(){FinanceMenu.click();}
 
     public void clickCloumnSearch(){
-        coloumnSearch.sendKeys("tester");
+        coloumnSearch.sendKeys("Nasabah");
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ENTER);
     }
@@ -45,5 +55,8 @@ public class FinancePage {
 
     public void clickBtnUpdate(){btnUpdate.click();}
 
+    public void clickBtnSave(){btnSave.click();}
+
+    public String getTxtValid(){return txtValid.getText();}
 
 }
